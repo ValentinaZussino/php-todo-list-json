@@ -30,7 +30,14 @@ const app = createApp({
         //     this.lista.splice(i, 1);
         // },
         toggleTodo(i){
-            this.todoList[i].done = !this.todoList[i].done;
+            const data = {
+                index: i,
+            }
+            axios.post(this.apiUrl, data,{headers: {'Content-Type' : 'multipart/form-data'}
+        }).then((response)=>{
+            this.getTodo();
+            console.log(response.data);
+        })
         },
         toggleHamburger(){
             document.body.classList.toggle('vz_menu-open');
