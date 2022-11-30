@@ -29,9 +29,9 @@ const app = createApp({
         // cancellaTodo(i){
         //     this.lista.splice(i, 1);
         // },
-        // toggleTodo(i){
-        //     this.lista[i].done = !this.lista[i].done;
-        // },
+        toggleTodo(i){
+            this.todoList[i].done = !this.todoList[i].done;
+        },
         toggleHamburger(){
             document.body.classList.toggle('vz_menu-open');
         }
